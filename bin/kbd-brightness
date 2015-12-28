@@ -1,0 +1,29 @@
+#!/bin/sh
+value=$(cat /sys/class/leds/smc::kbd_backlight/brightness)
+incr=32
+total=unset
+
+case $1 in
+  up)
+    total=`expr $value + $incr`
+    ;;
+  down)
+    total=`expr $value - $incr`
+    ;;
+  full)
+    total=255
+    ;;
+  off)
+    total=0
+    ;;
+esac
+
+if [[ $total == unset ]]; then
+  echo "please specify up, down, full, or off"
+  exit 1
+fi
+
+if [ $total -gt 255 ]; then total=255; fi
+if [ $total -lt 0 ]; then total=0; fi
+
+echo $total > /sys/class/leds/smc::kbd_backlight/brightness
