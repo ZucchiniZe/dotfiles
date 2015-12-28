@@ -187,17 +187,22 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
 # Keyboard brightness controls
-bindsym XF86KbdBrightnessUp exec sudo $HOME/bin/kbd-brightness up
-bindsym XF86KbdBrightnessDown exec sudo $HOME/bin/kbd-brightness down
+bindsym XF86KbdBrightnessUp exec sudo $HOME/.bin/kbd-brightness up
+bindsym XF86KbdBrightnessDown exec sudo $HOME/.bin/kbd-brightness down
 # all the way with shift
-bindsym Shift+XF86KbdBrightnessUp exec sudo $HOME/bin/kbd-brightness full
-bindsym Shift+XF86KbdBrightnessDown exec sudo $HOME/bin/kbd-brightness off
+bindsym Shift+XF86KbdBrightnessUp exec sudo $HOME/.bin/kbd-brightness full
+bindsym Shift+XF86KbdBrightnessDown exec sudo $HOME/.bin/kbd-brightness off
 
 # Media player controls
 bindsym XF86AudioPlay exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
 bindsym XF86AudioPause exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
 bindsym XF86AudioNext exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
 bindsym XF86AudioPrev exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+
+# rofi power menu
+# to use this you need systemd
+# you need to have to have "HandlePowerKey" in /etc/systemd/logind.conf eqal to "ignore" so you don't shut your computer off instad of trigger the shutdown menu
+bindsym XF86PowerOff exec $HOME/.bin/shutdown_menu
 
 assign [class="(?i)emacs"] $ws2
 assign [class="^Spotify$"] $ws3

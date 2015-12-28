@@ -6,3 +6,6 @@ alias ae="$EDITOR ~/.aliases"
 alias ar="source ~/.aliases"
 
 alias e="emacsclient"
+
+alias copy="xclip -sel clipboard"
+alias paste="xclip -sel clipboard -o"
