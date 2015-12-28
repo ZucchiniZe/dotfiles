@@ -137,7 +137,7 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 # lock computer
-bindsym $mod+semicolon exec i3lock
+bindsym $mod+semicolon exec i3lock --color=111111
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -164,13 +164,13 @@ bar {
 ### Special keys
 
 # increase/decrease volume (sound) and let i3blocks know
-bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume 1 +5% && pkill -RTMIN+10 i3blocks"
-bindsym XF86AudioLowerVolume exec "pactl set-sink-volume 1 -5% && pkill -RTMIN+10 i3blocks"
+bindsym XF86AudioRaiseVolume exec $HOME/.bin/volume up
+bindsym XF86AudioLowerVolume exec $HOME/.bin/volume down
 # new and improved with shift (10% instead of 5%)% instead of 5%)% instead of 5%)% instead of 5%)% instead of 5%)
-bindsym Shift+XF86AudioRaiseVolume exec "pactl set-sink-volume 1 +10% && pkill -RTMIN+10 i3blocks"
-bindsym Shift+XF86AudioLowerVolume exec "pactl set-sink-volume 1 -10% && pkill -RTMIN+10 i3blocks"
+bindsym Shift+XF86AudioRaiseVolume exec $HOME/.bin/volume dbl-up
+bindsym Shift+XF86AudioLowerVolume exec $HOME/.bin/volume dbl-down
 # mute sound and let i3blocks know
-bindsym XF86AudioMute exec "pactl set-sink-mute 1 toggle && pkill -RTMIN+10 i3blocks" 
+bindsym XF86AudioMute exec $HOME/.bin/volume mute
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness

@@ -1,0 +1,17 @@
+#!/bin/bash
+# simple bash script to change the volume
+
+change=unset
+
+case $1 in
+  up) change="+5%";;
+  down) change="-5%";;
+  dbl-up) change="+10%";;
+  dbl-down) change="-10%";;
+  mute) pactl set-sink-mute 1 toggle;;
+esac
+
+if [[ $change != unset ]]; then pactl set-sink-volume 1 "$change"; fi
+
+# let i3blocks know we changed the volume
+pkill -RTMIN+10 i3blocks
