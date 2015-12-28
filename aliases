@@ -1,0 +1,8 @@
+#!/usr/bin/env zsh
+
+# aliases file
+
+alias ae="$EDITOR ~/.aliases"
+alias ar="source ~/.aliases"
+
+alias e="emacsclient"
