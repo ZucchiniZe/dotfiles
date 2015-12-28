@@ -1,1 +1,4 @@
 # git config
+[user]
+	name = Alex B
+	email = me@alexb.io
