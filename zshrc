@@ -21,3 +21,6 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-completions
 antigen bundle mafredri/zsh-async
 antigen bundle ZucchiniZe/pure
+
+export NVM_DIR="/home/alex/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

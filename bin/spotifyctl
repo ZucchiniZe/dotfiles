@@ -1,0 +1,16 @@
+#!/bin/bash
+# simple bash script to control spotify
+
+command=''
+
+case $1 in
+  play) command=PlayPause;;
+  pause) command=PlayPause;;
+  next) command=Next;;
+  previous) command=Previous;;
+  stop) command=Stop;;
+esac
+
+if [[ $command == '' ]]; then echo "Needed an option"; exit 1; fi
+
+dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.$command > /dev/null 2>&1
