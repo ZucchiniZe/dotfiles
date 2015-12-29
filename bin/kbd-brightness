@@ -1,21 +1,14 @@
 #!/bin/sh
 value=$(cat /sys/class/leds/smc::kbd_backlight/brightness)
-incr=32
+# set the increment to 17 since that is a denominator for 255 (max brightness)
+incr=17
 total=unset
 
 case $1 in
-  up)
-    total=`expr $value + $incr`
-    ;;
-  down)
-    total=`expr $value - $incr`
-    ;;
-  full)
-    total=255
-    ;;
-  off)
-    total=0
-    ;;
+  up) total=`expr $value + $incr`;;
+  down) total=`expr $value - $incr`;;
+  full) total=255;;
+  off) total=0;;
 esac
 
 if [[ $total == unset ]]; then
