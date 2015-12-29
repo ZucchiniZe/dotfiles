@@ -37,7 +37,6 @@ values."
      games
      react
      deft
-     osx
      git
 
      ;; Languages

@@ -41,7 +41,7 @@ set $ws9 "9"
 set $ws0 "10"
 
 #                       BORDER      BACKGROUND  TEXT   INDICATOR
-client.focused          $green      $green      $black $green
+client.focused          $green      $green      $black $black
 client.unfocused        $black      $black      $white $black
 client.focused_inactive $black      $black      $white $black
 client.urgent           $red        $red        $black $red
