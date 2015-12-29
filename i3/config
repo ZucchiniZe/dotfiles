@@ -208,5 +208,9 @@ bindsym XF86AudioPrev exec $HOME/.bin/spotifyctl previous
 assign [class="(?i)emacs"] $ws2
 assign [class="(?i)slack"] $ws4
 
+# spotify is dickish and doesn't assign window hints first things so we have to use for_window
+for_window [class="Spotify"] move to workspace $ws3
+
 # set the background
-# exec feh --bg-scale ~/Pictures/starwars_wallpaper.jpg
+# not setting because the fedora/gnome default grey looks amazing
+# exec --no-startup-id feh --bg-scale ~/Pictures/starwars_wallpaper.jpg
