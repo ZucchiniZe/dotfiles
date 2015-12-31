@@ -1,0 +1,6 @@
+#!/bin/bash
+
+STRENGTH_NUM=`echo "$(sudo iwconfig wlp3s0 | gawk -F= '/\/70/ { print $2 }' | cut -d / -f1)*100/70" | bc`
+SSID=`iwconfig wlp3s0 | gawk 'match($4, /"(.*)"/, a) { print a[1] }'`
+
+echo "$STRENGTH_NUM% ($SSID)"

@@ -73,6 +73,10 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
+# move windows between monitors
+bindsym $mod+Shift+Up move container to output up
+bindsym $mod+Shift+Down move container to output down
+
 # move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
@@ -165,6 +169,7 @@ bar {
     colors {
         statusline         $white
         background         $transparent
+        separator          $blue
 
         #                  BORDER       BACKGROUND   TEXT
         focused_workspace  $transparent $transparent $blue

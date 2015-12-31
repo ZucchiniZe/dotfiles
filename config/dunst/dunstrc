@@ -21,7 +21,7 @@
   
   # The geometry of the window:
   #   [{width}]x{height}[+/-{x}+/-{y}]
-  geometry = "200x100-10+36"
+  geometry = "300x100-10+36"
 
   shrink = no
   transparency = 0

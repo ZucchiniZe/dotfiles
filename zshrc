@@ -24,3 +24,6 @@ antigen bundle ZucchiniZe/pure
 
 export NVM_DIR="/home/alex/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# fix the delete key
+bindkey "\e[3~" delete-char
