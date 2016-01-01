@@ -2,10 +2,16 @@
 
 # aliases file
 
-alias ae="$EDITOR ~/.aliases"
-alias ar="source ~/.aliases"
+alias ae='$EDITOR ~/.aliases'
+alias ar='source ~/.aliases'
 
-alias e="emacsclient"
+alias e='emacsclient'
 
-alias copy="xclip -sel clipboard"
-alias paste="xclip -sel clipboard -o"
+alias copy='xclip -sel clipboard'
+alias paste='xclip -sel clipboard -o'
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+alias cl=clear

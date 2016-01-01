@@ -41,7 +41,7 @@ set $ws9 "9"
 set $ws0 "10"
 
 #                       BORDER      BACKGROUND  TEXT   INDICATOR
-client.focused          $green      $green      $black $black
+client.focused          $cyan       $cyan       $black $black
 client.unfocused        $black      $black      $white $black
 client.focused_inactive $black      $black      $white $black
 client.urgent           $red        $red        $black $red
@@ -51,9 +51,12 @@ floating_modifier $mod
 
 # make i3-gaps work
 for_window [class="^.*"] border pixel 4
-gaps inner 10
+gaps inner 15
 smart_gaps on
 smart_borders on
+
+bindsym $mod+comma gaps inner all set 0
+bindsym $mod+period gaps inner all set 15
 
 # start a terminal
 bindsym $mod+Return exec gnome-terminal

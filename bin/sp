@@ -124,7 +124,7 @@ function sp-eval {
   require sort
 
   sp-metadata \
-  | grep --color=never -E "(title)|(album)|(artist)|(url)|(trackNumber)" \
+  | grep --color=never -E "(title)|(album)|(artist)|(url)|(trackid)|(trackNumber)" \
   | sort -r \
   | sed 's/^\([^|]*\)\|/\U\1/' \
   | sed -E 's/\|/="/' \
