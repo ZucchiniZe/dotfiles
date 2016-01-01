@@ -204,10 +204,10 @@ bindsym Shift+XF86KbdBrightnessUp exec sudo $HOME/.bin/kbd-brightness full
 bindsym Shift+XF86KbdBrightnessDown exec sudo $HOME/.bin/kbd-brightness off
 
 # Media player controls
-bindsym XF86AudioPlay exec $HOME/.bin/spotifyctl play
-bindsym XF86AudioPause exec $HOME/.bin/spotifyctl pause
-bindsym XF86AudioNext exec $HOME/.bin/spotifyctl next
-bindsym XF86AudioPrev exec $HOME/.bin/spotifyctl previous
+bindsym XF86AudioPlay exec $HOME/.bin/sp play
+bindsym XF86AudioPause exec $HOME/.bin/sp pause
+bindsym XF86AudioNext exec $HOME/.bin/sp next
+bindsym XF86AudioPrev exec $HOME/.bin/sp prev
 
 # automatically move windows to specified workspaces
 assign [class="(?i)emacs"] $ws2

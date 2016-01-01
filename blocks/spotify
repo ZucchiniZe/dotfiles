@@ -1,0 +1,9 @@
+#!/bin/bash
+
+eval $($HOME/.bin/sp eval)
+echo "$SPOTIFY_ARTIST - $SPOTIFY_TITLE"
+
+# echo ${BLOCK_BUTTON:-"hi"}
+if [[ $BLOCK_BUTTON -eq 1 ]]; then
+   echo $SPOTIFY_URL | xclip -sel clipboard
+fi
