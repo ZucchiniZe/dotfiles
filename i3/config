@@ -223,3 +223,4 @@ for_window [class="Spotify"] move to workspace $ws3
 # not setting because the fedora/gnome default grey looks amazing
 # exec --no-startup-id feh --bg-scale ~/Pictures/starwars_wallpaper.jpg
 exec --no-startup-id redshift
+exec --no-startup-id compton -b
