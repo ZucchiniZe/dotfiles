@@ -27,3 +27,9 @@ export NVM_DIR="/home/alex/.nvm"
 
 # fix the delete key
 bindkey "\e[3~" delete-char
+
+# add android_home
+export ANDROID_HOME=$HOME/code/comp/android-sdk-linux
+
+# enable history
+export HISTFILE=$HOME/.zhistory
