@@ -30,23 +30,18 @@ values."
      themes-megapack
      better-defaults
      ruby-on-rails
-     floobits
      spotify
      github
      colors
-     games
      react
-     deft
      git
 
      ;; Languages
-     go
      org
      lua
      yaml
      ruby
      html
-     latex
      python
      elixir
      clojure
@@ -242,9 +237,6 @@ layers configuration. You are free to put any user code."
    web-mode-code-indent-offet 2
    css-indent-offset 2)
 
-  ;; Deft (emacs nVALT) config
-  (setq deft-directory "~/org/school")
-
   ;; Org mode stuffs
   (setq org-agenda-files '("~/org"))
   (setq org-agenda-span 'fortnight)
@@ -302,7 +294,7 @@ layers configuration. You are free to put any user code."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(wakatime-api-key ""))
+ )
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

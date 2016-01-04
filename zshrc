@@ -8,7 +8,7 @@ export EDITOR=emacsclient
 source ~/.aliases
 
 # add .bin to the path for easily executable scripts
-export PATH=$PATH:$HOME/.bin
+export PATH=$PATH:$HOME/.bin:$HOME/.bin/priv
 
 # enable prompts
 autoload -U promptinit && promptinit
