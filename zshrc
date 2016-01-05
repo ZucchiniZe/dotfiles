@@ -4,6 +4,8 @@
 
 # set editor to emacs
 export EDITOR=emacsclient
+# set browser to chrome
+export BROWSER=google-chrome
 # add .bin to the path for easily executable scripts
 export PATH=$PATH:$HOME/.bin:$HOME/.bin/priv
 # add android_home

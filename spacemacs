@@ -35,6 +35,7 @@ values."
      spotify
      github
      colors
+     ranger
      react
      git
 
@@ -45,11 +46,9 @@ values."
      ruby
      html
      python
-     elixir
      clojure
      markdown
      javascript
-     typescript
      emacs-lisp
      dockerfile
 
@@ -111,7 +110,7 @@ values."
    dotspacemacs-startup-lists '(recents projects)
    ;; Number of recent files to show in the startup buffer. Ignored if
    ;; `dotspacemacs-startup-lists' doesn't include `recents'. (default 5)
-   dotspacemacs-startup-recent-list-size 5
+   dotspacemacs-startup-recent-list-size 10
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
@@ -283,6 +282,21 @@ layers configuration. You are free to put any user code."
   (setq org-directory "~/org")
   (setq org-default-notes-file "~/org/refile.org")
   (setq org-log-done nil)
+
+  ;; refile setup
+
+  ;; targets include this file and any file contributing to the agenda, up to 9 levels deep
+  (setq org-refile-targets (quote ((nil :maxlevel . 9)
+                                   (org-agenda-files :maxlevel . 9))))
+
+  ;; use full outline paths for refile targets
+  (setq org-refile-use-outline-path t)
+
+  ;; auto save on refile
+  (add-hook 'org-after-refile-insert-hook
+            (lambda ()
+              (add-hook 'auto-save-hook 'org-save-all-org-buffers nil t)
+              (auto-save-mode)))
 
   ;;;;;;;;;; Org-Mode Notifications settings for events
   ;; Erase all reminders and rebuilt reminders for today from the agenda
