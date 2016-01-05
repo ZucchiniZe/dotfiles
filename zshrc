@@ -22,14 +22,17 @@ source ~/.zplug/zplug
 zplug "b4b4r07/zplug"
 
 # zplug loading
-zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-syntax-highlighting", nice:10
 zplug "zsh-users/zsh-completions"
 zplug "mafredri/zsh-async"
 zplug "ZucchiniZe/pure"
 zplug "rimraf/k"
+zplug "arzzen/calc.plugin.zsh"
 
 zplug "plugins/git",   from:oh-my-zsh, if:"which git"
 zplug "lib/clipboard", from:oh-my-zsh
+
+zplug "clvv/fasd", as:command, of:fasd
 
 zplug "junegunn/fzf-bin", \
       as:command, \
@@ -53,6 +56,10 @@ fi
 # Then, source plugins and add commands to $PATH
 zplug load
 
+# get fasd setup
+eval "$(fasd --init auto)"
+
+# load nvm
 export NVM_DIR="/home/alex/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
