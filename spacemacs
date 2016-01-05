@@ -195,11 +195,14 @@ values."
    ;; List of search tool executable names. Spacemacs uses the first installed
    ;; tool of the list. Supported toos are `ag', `pt', `ack' and `grep'.
    ;; (default '("ag" "pt" "ack" "grep"))
-   dotspacemacs-search-tools '("ag" "pt" "ack" "grep")
+   dotspacemacs-search-tools '("pt" "ag" "ack" "grep")
    ;; The default package repository used if no explicit repository has been
    ;; specified with an installed package.
    ;; Not used for now. (default nil)
    dotspacemacs-default-package-repository nil
+   ;; Enable line numbers
+   ;; (default nil)
+   dotspacemacs-line-numbers t
    ))
 
 (defun dotspacemacs/user-init ()
@@ -215,9 +218,6 @@ user code."
   "Configuration function for user code.
  This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
-
-  ;; enable line numbers
-  (spacemacs/toggle-line-numbers-on)
 
   ;; disable powerline seperators
   (setq powerline-default-separator nil)
