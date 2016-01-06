@@ -144,7 +144,7 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 # lock computer
-bindsym $mod+semicolon exec i3lock --color=111111
+bindsym $mod+semicolon exec $HOME/.bin/lockit
 # rofi power menu
 # to use this you need systemd
 # you need to have to have "HandlePowerKey" in /etc/systemd/logind.conf eqal to "ignore" so you don't shut your computer off instad of trigger the shutdown menu
