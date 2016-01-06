@@ -4,6 +4,9 @@
 image=/tmp/screen.png
 icon=$HOME/.i3/lock.png
 
+# pause music so I don't get jarred when opening up laptop
+$HOME/.bin/sp play
+
 # take the image
 scrot $image
 
@@ -12,5 +15,5 @@ convert $image -scale 10% -scale 1000% -fill black -colorize 25% $image
 # add the lock icon to the top of the image
 convert $image $icon -gravity center -composite -matte  $image
 
-# lock the screen with the imaeg
-i3lock -e -u -n -i $image
+# lock the screen with the image
+i3lock -e -n -i $image
