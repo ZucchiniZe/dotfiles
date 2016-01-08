@@ -28,8 +28,6 @@ set $darkwhite   #a89984
 set $background  #000000
 set $transparent #000000FF
 
-set $rofi rofi -lines 5 -eh 2 -width 100 -padding 300 -opacity 90 -bw 0 -bc "#2f343f" -bg "#2f343f" -hlbg "#2f343f" -hlfg "#ffffff" -fg "#adadad"
-
 # workspace names and symbols
 set $ws1 "1 "
 set $ws2 "2 "
@@ -67,10 +65,10 @@ bindsym $mod+Return exec gnome-terminal
 bindsym $mod+Shift+q kill
 
 # Bind apple launcher to dmenu run
-bindsym XF86LaunchA exec $rofi -show window
-bindsym XF86LaunchB exec $rofi -show run
-bindsym $mod+d exec $rofi -show run
-bindsym $mod+space exec $rofi -show window
+bindsym XF86LaunchA exec rofi -show window
+bindsym XF86LaunchB exec rofi -show run
+bindsym $mod+d exec rofi -show run
+bindsym $mod+space exec rofi -show window
 
 # change focus
 bindsym $mod+h focus left

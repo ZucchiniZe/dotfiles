@@ -1,3 +1,4 @@
+! Settings to make font render identical to ubuntus defaults
 Xft.dpi: 96
 Xft.antialias: 1
 Xft.hinting: 1
@@ -5,4 +6,26 @@ Xft.hintstyle: hintslight
 Xft.rgba: rgb
 Xft.lcdfilter: lcddefault
 
+! rofi settings
 rofi.terminal: gnome-terminal
+rofi.lines: 5
+rofi.eh: 2
+rofi.width: 100
+rofi.padding: 300
+rofi.opacity: 90
+rofi.bw: 0
+rofi.bc: #2f343f
+rofi.bg: #2f343f
+rofi.hlbg: #2f343f
+rofi.hlfg: #ffffff
+rofi.fg: #adadad
+
+! URxvt settings
+URxvt*font: xft:Fira Mono:size=11:antialias=true:hinting=true:autohint=true:bold
+URxvt*depth: 32
+! URxvt*background: black
+! URxvt*cursorColor: white
+URxvt*scrollBar: false
+URxvt*scrollBar_right: true
+URxvt*scrollColor: black
+URxvt.perl-ext-common: default,clipboard

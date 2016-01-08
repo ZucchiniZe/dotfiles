@@ -276,6 +276,10 @@ layers configuration. You are free to put any user code."
    web-mode-code-indent-offet 2
    css-indent-offset 2)
 
+  ;; Set google chrome as the default browser for org mode
+  (setq browse-url-browser-function 'browse-url-generic
+        browse-url-generic-program "google-chrome")
+
   ;; Org mode stuffs
   (setq org-agenda-files '("~/org"))
   (setq org-agenda-span 'fortnight)

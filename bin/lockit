@@ -5,7 +5,7 @@ image=/tmp/screen.png
 icon=$HOME/.i3/lock.png
 
 # pause music so I don't get jarred when opening up laptop
-$HOME/.bin/sp play
+$HOME/.bin/sp pause
 
 # take the image
 scrot $image
@@ -16,4 +16,8 @@ convert $image -scale 10% -scale 1000% -fill black -colorize 25% $image
 convert $image $icon -gravity center -composite -matte  $image
 
 # lock the screen with the image
-i3lock -e -n -i $image
+# -e ignore the empty password
+# -u do not show the unlock ring thing
+# -n no fork
+# -i use the specified image
+i3lock -e -u -n -i $image

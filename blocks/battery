@@ -1,3 +1,36 @@
 #!/bin/bash
 
-acpi | awk '{ print $4}' | cut -d ',' -f1
+actual=$(acpi | awk '{ print $4 }' | cut -d, -f1)
+status=$(acpi | awk '{ print $3 }' | cut -d, -f1)
+percentage=$(echo $actual | cut -d% -f1)
+squares="⬛⬜⬜⬜⬜"
+color="#FFFFFF"
+
+if (( percentage > 0 && percentage < 20 )); then
+  squares="⬛⬜⬜⬜⬜"
+  color="#FF000" # red
+elif (( percentage >= 20 && percentage < 40 )); then
+  squares="⬛⬛⬜⬜⬜"
+  color="#FFA500" # orange
+elif (( percentage >= 40 && percentage < 60 )); then
+  squares="⬛⬛⬛⬜⬜"
+  color="#FFFF00" # yellow
+elif (( percentage >= 60 && percentage < 80 )); then
+  squares="⬛⬛⬛⬛⬜"
+elif (( percentage >= 80 && percentage < 90 )); then
+  squares="⬛⬛⬛⬛⬛"
+elif (( percentage >= 90 )); then
+  squares="⬛⬛⬛⬛⬛"
+  color="#32CD32" # limegreen
+fi
+
+
+# if (( status === "Charging" )); then
+if [[ $status == "Charging" ]]; then
+  color="#32CD32" # lime green
+fi
+
+
+echo "$actual $squares" # full text
+echo $actual # short text
+echo $color # color
