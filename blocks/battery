@@ -2,12 +2,20 @@
 # simple battery bar script for i3blocks
 # the bar itself if made up of 5 unicode squares which become hollow of filled
 # depending on the status of the battery.
-# there are also colors that correspond with the status of the battery
+# there are also colors that correspond with the status of the battery:
+
 # red = your battery is less than 20% full, go charge it before you let it die :(
 # orange = your battery is less than 40% full, you should start looking for a charger
 # yellow = your battery is less than 60% full, just a friendly reminder that you have a battery
 # white = your battey is less than 90% full, it is happy now 
 # green = you are either charging your battery or it is above 90% full, good job :)
+
+# and each color corresponds with a number of squares
+# red = 1
+# orange = 2
+# yellow = 3
+# white = 4 or 5
+# green = 1-5
 
 output=$(acpi)
 actual=$(echo "$output" | awk '{ print $4 }' | cut -d, -f1)
