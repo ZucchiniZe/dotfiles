@@ -28,4 +28,3 @@ URxvt*depth: 32
 URxvt*scrollBar: false
 URxvt*scrollBar_right: true
 URxvt*scrollColor: black
-URxvt.perl-ext-common: default,clipboard

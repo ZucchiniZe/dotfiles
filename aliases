@@ -15,3 +15,6 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 
 alias cl=clear
+
+# alias for setting up my second display
+alias connectdisp='xrandr --output eDP1 --auto --primary --output HDMI1 --auto --above eDP1'

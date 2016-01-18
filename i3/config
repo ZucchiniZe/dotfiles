@@ -50,7 +50,7 @@ client.background       $black
 floating_modifier $mod
 
 # make i3-gaps work
-for_window [class="^.*"] border pixel 4
+for_window [class="^.*"] border pixel 3
 gaps inner 15
 smart_gaps on
 smart_borders on
@@ -60,6 +60,8 @@ bindsym $mod+period gaps inner all set 15
 
 # start a terminal
 bindsym $mod+Return exec gnome-terminal
+# start scratch buffer
+bindsym $mod+Shift+Return exec emacsclient -c
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -79,6 +81,14 @@ bindsym $mod+l focus right
 # move windows between monitors
 bindsym $mod+Shift+Up move container to output up
 bindsym $mod+Shift+Down move container to output down
+bindsym $mod+Shift+Left move container to output left
+bindsym $mod+Shift+Right move container to output right
+
+# move entire workspaces between monitors
+bindsym $mod+Control+Up move workspace to output up
+bindsym $mod+Control+Down move workspace to output down
+bindsym $mod+Control+Left move workspace to output left
+bindsym $mod+Control+Right move workspace to output right
 
 # move focused window
 bindsym $mod+Shift+h move left
@@ -183,13 +193,21 @@ bar {
     }
 }
 
-
 ### Special keys
+
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+Escape move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+Escape scratchpad show
+
+# disable mouse moving with focus between multiple displays
+mouse_warping none
 
 # increase/decrease volume (sound) and let i3blocks know
 bindsym XF86AudioRaiseVolume exec $HOME/.bin/volume up
 bindsym XF86AudioLowerVolume exec $HOME/.bin/volume down
-# new and improved with shift (10% instead of 5%)% instead of 5%)% instead of 5%)% instead of 5%)% instead of 5%)
+# new and improved with shift (10% instead of 5%)
 bindsym Shift+XF86AudioRaiseVolume exec $HOME/.bin/volume dbl-up
 bindsym Shift+XF86AudioLowerVolume exec $HOME/.bin/volume dbl-down
 # mute sound and let i3blocks know
@@ -224,3 +242,4 @@ for_window [class="Spotify"] move to workspace $ws3
 # exec --no-startup-id feh --bg-scale ~/Pictures/starwars_wallpaper.jpg
 exec --no-startup-id redshift
 exec --no-startup-id compton -b
+exec --no-startup-id unclutter

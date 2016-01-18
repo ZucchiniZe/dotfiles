@@ -1,0 +1,29 @@
+deltas: 1d 7d 30d
+# delta-names:
+#   super-important: 1h 1d 30d 90d 360d
+# include-jobs: /usr/local/etc/tarsnapper/*.yml
+target: ab-$name-$date
+
+jobs:
+  home:
+    source: /home/alex
+    excludes:
+      - /home/alex/.cache
+      - /home/alex/code/comp
+      - /home/alex/.config/Slack
+      - /home/alex/.config/google-chrome
+      - /home/alex/.mozilla
+      - /home/alex/.m2
+      - /home/alex/.gradle
+      - /home/alex/.local/share/Trash
+      - /home/alex/.npm
+      - /home/alex/.nvm
+
+  # some-other-job:
+  #   sources:
+  #     - /var/dir/1
+  #     - /etc/google
+  #   excludes:
+  #     - /etc/google/cache
+  #   target: /custom-target-$date.zip
+  #   deltas: 1h 6h 1d 7d 24d 180d

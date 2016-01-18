@@ -3,7 +3,7 @@
 eval $($HOME/.bin/sp eval)
 
 if [[ $BLOCK_BUTTON -eq 1 ]]; then
-  echo $SPOTIFY_URL | xclip -sel clipboard
+  echo $SPOTIFY_URL | xclip -sel clipboard &
 else
   echo "$SPOTIFY_ARTIST - $SPOTIFY_TITLE"
 fi

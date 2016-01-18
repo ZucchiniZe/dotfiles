@@ -22,7 +22,7 @@ actual=$(echo "$output" | awk '{ print $4 }' | cut -d, -f1)
 status=$(echo "$output" | awk '{ print $3 }' | cut -d, -f1)
 percentage=$(echo $actual | cut -d% -f1)
 squares="⬛⬜⬜⬜⬜"
-color="#FFFFFF"
+color=""
 
 if (( percentage > 0 && percentage < 20 )); then
   squares="⬛⬜⬜⬜⬜"
@@ -44,7 +44,9 @@ fi
 
 
 if [[ $status == "Charging" ]]; then
-  color="#32CD32" # lime green
+  color="#00BFFF" # deep sky blue
+elif [[ $status == "Full" ]]; then
+  color=""
 fi
 
 

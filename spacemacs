@@ -25,7 +25,7 @@ values."
      ;; ----------------------------------------------------------------
 
      ;; Layers
-     ;; spell-checking
+     (spell-checking :variables spell-checking-enable-by-default nil)
      auto-completion
      syntax-checking
      version-control
@@ -343,6 +343,8 @@ layers configuration. You are free to put any user code."
 
   ;; Set paradox github token for gisting
   (setq paradox-github-token "3cc4cb5be5cedeb2da60e266a1d0fc2f7df7ae32")
+
+  (set-face-attribute 'region nil :distant-foreground nil)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
