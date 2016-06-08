@@ -32,9 +32,11 @@ values."
      themes-megapack
      better-defaults
      ruby-on-rails
-     spotify
+     wakatime
+     finance
      github
      colors
+     chrome
      ranger
      react
      git
@@ -42,13 +44,19 @@ values."
      ;; Languages
      org
      lua
+     sql
+     elm
      yaml
      ruby
      html
+     rust
+     latex
      python
      clojure
+     haskell
      markdown
      javascript
+     typescript
      emacs-lisp
      dockerfile
 
@@ -154,10 +162,10 @@ values."
    dotspacemacs-default-layout-name "@home"
    ;; If non nil the default layout name is displayed in the mode-line.
    ;; (default nil)
-   dotspacemacs-display-default-layout t
+   dotspacemacs-display-default-layout nil
    ;; If non nil then the last auto saved layouts are resume automatically upon
    ;; start. (default nil)
-   dotspacemacs-auto-resume-layouts t
+   dotspacemacs-auto-resume-layouts nil
    ;; Location where to auto-save files. Possible values are `original' to
    ;; auto-save the file in-place, `cache' to auto-save the file to another
    ;; file stored in the cache directory and `nil' to disable auto-saving.
@@ -215,7 +223,7 @@ values."
    ;; If non nil smooth scrolling (native-scrolling) is enabled. Smooth
    ;; scrolling overrides the default behavior of Emacs which recenters the
    ;; point when it reaches the top or bottom of the screen. (default t)
-   dotspacemacs-smooth-scrolling t
+   dotspacemacs-smooth-scrolling nil
    ;; If non nil line numbers are turned on in all `prog-mode' and `text-mode'
    ;; derivatives. If set to `relative', also turns on relative line numbers.
    ;; (default nil)
@@ -262,19 +270,21 @@ layers configuration. You are free to put any user code."
   (setq powerline-default-separator nil)
 
   ;; Set all javascript indents to 2
-  (setq
-   javascript-indent-level 2
-   javascript-basic-offset 2
-   js-indent-level 2
-   js-basic-offset 2
-   js2-indent-level 2
-   js2-basic-offset 2
-   sh-basic-offset 2
-   sh-indentation 2
-   web-mode-markup-indent-offset 2
-   web-mode-css-indent-offset 2
-   web-mode-code-indent-offet 2
-   css-indent-offset 2)
+  (let ((indent 2))
+    (setq
+     javascript-indent-level indent
+     javascript-basic-offset indent
+     js-indent-level indent
+     js-basic-offset indent
+     js2-indent-level indent
+     js2-basic-offset indent
+     typesript-indent-level indent
+     sh-basic-offset indent
+     sh-indentation indent
+     web-mode-markup-indent-offset indent
+     web-mode-css-indent-offset indent
+     web-mode-code-indent-offet indent
+     css-indent-offset indent))
 
   ;; Set google chrome as the default browser for org mode
   (setq browse-url-browser-function 'browse-url-generic
@@ -349,3 +359,19 @@ layers configuration. You are free to put any user code."
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.(custom-set-variables
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(wakatime-api-key "921f771b-54f5-4a43-9d24-cc5cdc7ea669")
+ '(wakatime-cli-path "/usr/bin/wakatime"))
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:family "Fira Mono" :foundry "CTDB" :slant normal :weight normal :height 90 :width normal))))
+ '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
+ '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))

@@ -1,4 +1,4 @@
-deltas: 1d 7d 30d
+deltas: 1d 7d 30d 90d 365d
 # delta-names:
 #   super-important: 1h 1d 30d 90d 360d
 # include-jobs: /usr/local/etc/tarsnapper/*.yml
@@ -8,8 +8,10 @@ jobs:
   home:
     source: /home/alex
     excludes:
-      - /home/alex/.cache
+      - /home/alex/Movies
+      - /home/alex/Games
       - /home/alex/code/comp
+      - /home/alex/.cache
       - /home/alex/.config/Slack
       - /home/alex/.config/google-chrome
       - /home/alex/.mozilla

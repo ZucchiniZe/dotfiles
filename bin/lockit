@@ -13,11 +13,11 @@ scrot $image
 # scale down the image and scale back up to pixelate fast
 convert $image -scale 10% -scale 1000% -fill black -colorize 25% $image
 # add the lock icon to the top of the image
-convert $image $icon -gravity center -composite -matte  $image
+# convert $image $icon -gravity center -composite -matte  $image
 
 # lock the screen with the image
 # -e ignore the empty password
 # -u do not show the unlock ring thing
 # -n no fork
 # -i use the specified image
-i3lock -e -u -n -i $image
+i3lock -e -n -i $image

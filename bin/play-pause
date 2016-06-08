@@ -1,0 +1,9 @@
+#!/bin/bash
+
+windows=$(xlsclients)
+
+if [[ $windows == *"spotify"* ]]; then
+  $HOME/.bin/sp play
+else
+  xdotool key XF86AudioPlay
+fi

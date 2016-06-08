@@ -6,10 +6,12 @@
 export EDITOR=emacsclient
 # set browser to chrome
 export BROWSER=google-chrome
-# add .bin to the path for easily executable scripts
-export PATH=$PATH:$HOME/.bin:$HOME/.bin/priv
 # add android_home
 export ANDROID_HOME=$HOME/code/comp/android-sdk-linux
+# set ledger file to inside google drive
+export LEDGER_FILE=~/drive/Accounting/hledger.journal
+# set rust source folder for racer
+export RUST_SRC_PATH=/usr/local/src/rust/src
 
 # include the aliases in current shell
 source ~/.aliases
@@ -31,7 +33,9 @@ zplug "ZucchiniZe/pure"
 zplug "rimraf/k"
 zplug "arzzen/calc.plugin.zsh"
 
-zplug "plugins/git",   from:oh-my-zsh, if:"which git"
+zplug "plugins/git",   from:oh-my-zsh
+zplug "plugins/dnf",   from:oh-my-zsh
+zplug "plugins/docker", from:oh-my-zsh
 zplug "lib/clipboard", from:oh-my-zsh
 
 zplug "clvv/fasd", as:command, of:fasd

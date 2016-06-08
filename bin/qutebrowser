@@ -1,3 +1,3 @@
 #!/bin/bash
 
-~/code/comp/qutebrowser/.venv/bin/python3 -m qutebrowser "$@"
+~/code/comp/wm/qutebrowser/.venv/bin/python3 -m qutebrowser "$@"

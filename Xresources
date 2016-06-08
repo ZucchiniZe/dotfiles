@@ -8,7 +8,8 @@ Xft.lcdfilter: lcddefault
 
 ! rofi settings
 rofi.terminal: gnome-terminal
-rofi.lines: 5
+rofi.font: Lato Medium 16
+rofi.lines: 8
 rofi.eh: 2
 rofi.width: 100
 rofi.padding: 300

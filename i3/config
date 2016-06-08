@@ -6,7 +6,8 @@
 # set the modifier key to super (command)
 set $mod Mod4
 
-font pango:Fira Mono 10
+font pango:Fira Sans 10
+# font pango:Lato Medium 10
 
 # colors, yay
 set $black       #212121
@@ -70,7 +71,6 @@ bindsym $mod+Shift+q kill
 bindsym XF86LaunchA exec rofi -show window
 bindsym XF86LaunchB exec rofi -show run
 bindsym $mod+d exec rofi -show run
-bindsym $mod+space exec rofi -show window
 
 # change focus
 bindsym $mod+h focus left
@@ -225,10 +225,9 @@ bindsym Shift+XF86KbdBrightnessUp exec sudo $HOME/.bin/kbd-brightness full
 bindsym Shift+XF86KbdBrightnessDown exec sudo $HOME/.bin/kbd-brightness off
 
 # Media player controls
-bindsym XF86AudioPlay exec $HOME/.bin/sp play
-bindsym XF86AudioPause exec $HOME/.bin/sp pause
-bindsym XF86AudioNext exec $HOME/.bin/sp next
-bindsym XF86AudioPrev exec $HOME/.bin/sp prev
+bindsym XF86AudioPlay  exec $HOME/.bin/sp play
+bindsym XF86AudioNext  exec $HOME/.bin/sp next
+bindsym XF86AudioPrev  exec $HOME/.bin/sp prev
 
 # automatically move windows to specified workspaces
 assign [class="(?i)emacs"] $ws2
@@ -237,9 +236,16 @@ assign [class="(?i)slack"] $ws4
 # spotify is dickish and doesn't assign window hints first things so we have to use for_window
 for_window [class="Spotify"] move to workspace $ws3
 
+# remove the border on albert (floating application)
+for_window [class="(?i)albert"] border pixel 0
+
 # set the background
 # not setting because the fedora/gnome default grey looks amazing
 # exec --no-startup-id feh --bg-scale ~/Pictures/starwars_wallpaper.jpg
 exec --no-startup-id redshift
 exec --no-startup-id compton -b
 exec --no-startup-id unclutter
+exec --no-startup-id nm-applet
+exec --no-startup-id rescuetime
+exec --no-startup-id albert
+exec --no-startup-id copyq

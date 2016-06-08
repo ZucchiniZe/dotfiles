@@ -6,6 +6,7 @@ alias ae='$EDITOR ~/.aliases'
 alias ar='source ~/.aliases'
 
 alias e='emacsclient'
+alias vim='nvim'
 
 alias copy='xclip -sel clipboard'
 alias paste='xclip -sel clipboard -o'
@@ -16,5 +17,17 @@ alias ....='cd ../../..'
 
 alias cl=clear
 
-# alias for setting up my second display
-alias connectdisp='xrandr --output eDP1 --auto --primary --output HDMI1 --auto --above eDP1'
+# turn off screensaver
+alias movieon='xset s off'
+alias movieoff='xset s on'
+
+alias psg='ps aux | grep'
+
+alias tmp='mkdir -p /tmp/$1; cd /tmp/$1'
+alias rot13="tr a-zA-Z n-za-mN-ZA-M"
+
+alias python='python3'
+alias pip='pip3'
+
+alias gs='git status -sb'
+alias gl='git log --graph --oneline --all --decorate --topo-order'

@@ -21,24 +21,23 @@ output=$(acpi)
 actual=$(echo "$output" | awk '{ print $4 }' | cut -d, -f1)
 status=$(echo "$output" | awk '{ print $3 }' | cut -d, -f1)
 percentage=$(echo $actual | cut -d% -f1)
-squares="⬛⬜⬜⬜⬜"
+battery=""
 color=""
 
-if (( percentage > 0 && percentage < 20 )); then
-  squares="⬛⬜⬜⬜⬜"
+if (( percentage > 0 && percentage < 25 )); then
   color="#FF000" # red
-elif (( percentage >= 20 && percentage < 40 )); then
-  squares="⬛⬛⬜⬜⬜"
+elif (( percentage >= 25 && percentage < 50 )); then
+  battery=""
   color="#FFA500" # orange
-elif (( percentage >= 40 && percentage < 60 )); then
-  squares="⬛⬛⬛⬜⬜"
+elif (( percentage >= 50 && percentage < 75 )); then
+  battery=""
   color="#FFFF00" # yellow
-elif (( percentage >= 60 && percentage < 80 )); then
-  squares="⬛⬛⬛⬛⬜"
+elif (( percentage >= 75 && percentage < 85 )); then
+  battery=""
 elif (( percentage >= 80 && percentage < 90 )); then
-  squares="⬛⬛⬛⬛⬛"
+  battery=""
 elif (( percentage >= 90 )); then
-  squares="⬛⬛⬛⬛⬛"
+  battery=""
   color="#32CD32" # limegreen
 fi
 
@@ -50,6 +49,6 @@ elif [[ $status == "Full" ]]; then
 fi
 
 
-echo "$actual $squares" # full text
+echo "$battery $percentage%" # full text
 echo "$actual" # short text
 echo "$color" # color
